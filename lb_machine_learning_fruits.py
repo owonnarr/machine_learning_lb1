@@ -73,12 +73,15 @@ if 'Category' in file_data.columns:
 
     print("\nLogistic Regression Model:confusion_matrix ", confusion_matrix(y_test, y_predicted_lr))
     print("\nLogistic Regression Model:classification_report ", classification_report(y_test, y_predicted_lr))
+    print("\nLogistic Regression Model:accuracy_score: ", accuracy_score(y_test, y_predicted_lr))
 
     random_forest_model = RandomForestClassifier()
     random_forest_model.fit(X_train, y_train)
 
     y_predicted = random_forest_model.predict(X_test)
 
-    print("\nAccuracy: ", accuracy_score(y_test, y_predicted))
+    print("\nRandom Forest Model:confusion_matrix ", confusion_matrix(y_test, y_predicted_lr))
+    print("\nRandom Forest Model:classification_report ", classification_report(y_test, y_predicted_lr))
+    print("\nRandom Forest Model:accuracy_score: ", accuracy_score(y_test, y_predicted))
 else:
     print("\nDataset does not have 'Category', classification cannot be done.")
